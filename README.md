@@ -34,10 +34,39 @@ docker rm tp-nginx-vol`
 ![alt text](./TP-1/img/q5_image_4.png)
 
 ### Question 6:
+a) Création du Dockerfile (cf. Dockerfile)
 
+b) 
+#### Build de cette nouvelle image:
+```bash
+cd TP-1/
 
+docker build -t tp-1 .
+```
+<br>
 
+![alt text](./TP-1/img/q6_image_1.png)
 
+#### Exécution de cette nouvelle image fraîchement build:
+
+`docker run --name tp-1 -d -p 8080:80 tp-1`
+![alt text](./TP-1/img/q6_image_2.png)
+![alt text](./TP-1/img/q6_image_3.png)
+
+c)
+- Différences:
+    - La procédure 5 utilise une image officielle de `nginx`. Tandis que la procédure 6 utilise une image personnalisé.
+
+    - La procédure 5 utilise un volume externe via `-v` contrairement à la 6.
+
+    - La procédure 5 ne nécessite que d'une seule commande pour être lancée `docker run` là où la procédure 6 en appelle 2: `docker build` et `docker run`
+
+- Conclusion:<br>
+Les deux procédures ont leurs avantages et inconvénients mais pour faire simple:
+
+    - Procédure 5 : rapide et idéale pour le dev car on peut modifier les fichiers sans rebuild grâce au volume.
+
+    - Procédure 6: plus adaptée pour le déploiement en prod car on va venir versionner, contrôler et verifier que notre image contient bien tous les fichiers nécessaires sans dépendance au disque local.
 ## TP-2
 
 ### Question 2:
