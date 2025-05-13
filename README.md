@@ -2,7 +2,7 @@
 
 ## TP-1
 
-### Question 5:
+### Question 3:
 a) Récupération de l'image nginx depuis Docker Hub:<br>
 `docker pull nginx`
 
@@ -33,7 +33,7 @@ docker rm tp-nginx-vol`
 
 ![alt text](./TP-1/img/q5_image_4.png)
 
-### Question 6:
+### Question 4:
 a) Création du Dockerfile (cf. Dockerfile)
 
 b) 
@@ -55,20 +55,20 @@ docker build -t tp-1 .
 
 c)
 - Différences:
-    - La procédure 5 utilise une image officielle de `nginx`. Tandis que la procédure 6 utilise une image personnalisé.
+    - La procédure 3 utilise une image officielle de `nginx`. Tandis que la procédure 6 utilise une image personnalisé.
 
-    - La procédure 5 utilise un volume externe via `-v` contrairement à la 6.
+    - La procédure 3 utilise un volume externe via `-v` contrairement à la 4.
 
-    - La procédure 5 ne nécessite que d'une seule commande pour être lancée `docker run` là où la procédure 6 en appelle 2: `docker build` et `docker run`
+    - La procédure 3 ne nécessite que d'une seule commande pour être lancée `docker run` là où la procédure 4 en appelle 2: `docker build` et `docker run`
 
 - Conclusion:<br>
 Les deux procédures ont leurs avantages et inconvénients mais pour faire simple:
 
-    - Procédure 5 : rapide et idéale pour le dev car on peut modifier les fichiers sans rebuild grâce au volume.
+    - Procédure 3 : rapide et idéale pour le dev car on peut modifier les fichiers sans rebuild grâce au volume.
 
-    - Procédure 6: plus adaptée pour le déploiement en prod car on va venir versionner, contrôler et verifier que notre image contient bien tous les fichiers nécessaires sans dépendance au disque local.
+    - Procédure 4: plus adaptée pour le déploiement en prod car on va venir versionner, contrôler et verifier que notre image contient bien tous les fichiers nécessaires sans dépendance au disque local.
 
-### Question 7:
+### Question 5:
 
 a) Récupération des images mysql:5.7 et phpmyadmin:latest
 
