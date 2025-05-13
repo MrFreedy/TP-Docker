@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+RUN apk add --no-cache openssl
+
 EXPOSE 3000
 
 CMD ["node", "src/index.js"]
