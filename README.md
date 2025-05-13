@@ -115,5 +115,11 @@ La commande pour build l'image Docker est la suivante : `docker build -t ma_supe
 ## TP-3
 2) Initialisation du projet React vierge (voir dossier TP-3)
 
-`npx create-next-app@latest`
-
+```bash
+npx create-next-app@latest
+cd my-app
+npm run build
+npm start
+```
+![alt text](./TP-3/img/q2_image_1.png)
+![alt text](./TP-3/img/q2_image_2.png)
