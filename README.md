@@ -67,6 +67,32 @@ Les deux procédures ont leurs avantages et inconvénients mais pour faire simpl
     - Procédure 5 : rapide et idéale pour le dev car on peut modifier les fichiers sans rebuild grâce au volume.
 
     - Procédure 6: plus adaptée pour le déploiement en prod car on va venir versionner, contrôler et verifier que notre image contient bien tous les fichiers nécessaires sans dépendance au disque local.
+
+### Question 7:
+
+a) Récupération des images mysql:5.7 et phpmyadmin:latest
+
+`docker pull mysql:5.7` et `docker pull phpmyadmin:latest`
+
+b) Lancement du container mysql et phpmyadmin:
+
+- MySQL:<br>
+```bash
+docker run --name mysql57 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=tp_db -p 3306:3306 -d mysql:5.7
+```
+
+- PHPMyAdmin:<br>
+```bash
+docker run --name myphpadmin -d \
+  --link mysql57:db \
+  -p 8080:80 \
+  -e PMA_HOST=db \
+  -e PMA_PORT=3306 \
+  phpmyadmin/phpmyadmin
+```
+
+![alt text](./TP-1/img/q7_image_1.png)
+![alt text](./TP-1/img/q7_image_2.png)
 ## TP-2
 
 ### Question 2:
